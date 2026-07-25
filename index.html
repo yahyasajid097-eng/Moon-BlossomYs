@@ -7,22 +7,22 @@
 <meta name="description" content="Moon Blossom Ys — حقائب وإكسسوارات فاخرة مغربية الصنع. اطلبي مباشرة عبر واتساب. Bloom under the moon.">
 <meta name="keywords" content="حقائب, إكسسوارات, حقائب يد, محافظ, Moon Blossom, المغرب, Bags, Accessories, Morocco">
 <meta name="theme-color" content="#0a0806">
-<link rel="canonical" href="https://yahyasajid097-eng.github.io/Yahya/">
+<link rel="canonical" href="https://yahyasajid097-eng.github.io/salamoona/">
 
 <!-- Open Graph (WhatsApp / Instagram / Facebook previews) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Moon Blossom">
 <meta property="og:title" content="Moon Blossom | حقائب وإكسسوارات فاخرة">
 <meta property="og:description" content="حقائب وإكسسوارات مختارة بعناية — ازدهري تحت ضوء القمر. اطلبي مباشرة عبر واتساب.">
-<meta property="og:image" content="https://yahyasajid097-eng.github.io/Yahya/logo.png">
-<meta property="og:url" content="https://yahyasajid097-eng.github.io/Yahya/">
+<meta property="og:image" content="https://yahyasajid097-eng.github.io/salamoona/logo.png">
+<meta property="og:url" content="https://yahyasajid097-eng.github.io/salamoona/">
 <meta property="og:locale" content="ar_MA">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Moon Blossom | Bags &amp; Accessories">
 <meta name="twitter:description" content="حقائب وإكسسوارات فاخرة — Bloom under the moon.">
-<meta name="twitter:image" content="https://yahyasajid097-eng.github.io/Yahya/logo.png">
+<meta name="twitter:image" content="https://yahyasajid097-eng.github.io/salamoona/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,8 @@
   "@type": "Organization",
   "name": "Moon Blossom Ys",
   "description": "حقائب وإكسسوارات فاخرة — Bags & Accessories",
-  "url": "https://yahyasajid097-eng.github.io/Yahya/",
-  "logo": "https://yahyasajid097-eng.github.io/Yahya/logo.png",
+  "url": "https://yahyasajid097-eng.github.io/salamoona/",
+  "logo": "https://yahyasajid097-eng.github.io/salamoona/logo.png",
   "sameAs": ["https://www.instagram.com/moon_blossom.ys"]
 }
 </script>
@@ -275,6 +275,11 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
 .qv-body{padding:30px; overflow-y:auto;}
 .qv-body h3{font-size:1.35rem; margin-bottom:10px;}
 .qv-body .desc{color:var(--ink-dim); font-size:.92rem; margin-bottom:18px;}
+.qv-specs{display:flex; flex-direction:column; gap:8px; background:var(--card-hi); border:1px solid var(--line); border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:18px;}
+.qv-spec-row{display:flex; justify-content:space-between; font-size:.86rem; color:var(--ink-dim);}
+.qv-spec-row b{color:var(--gold-light); font-weight:600;}
+.qv-wish{position:absolute; top:14px; inset-inline-start:14px; top:14px;}
+.qv-wish.active svg{fill:var(--wine-light); stroke:var(--wine-light);}
 .qv-body .price-row{margin-bottom:22px;}
 .qv-body .price{font-size:1.4rem;}
 .qv-actions{display:flex; flex-direction:column; gap:10px;}
@@ -563,6 +568,10 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
     <div class="qv-body">
       <h3 id="qvName"></h3>
       <p class="desc" id="qvDesc"></p>
+      <div class="qv-specs" id="qvSpecs">
+        <div class="qv-spec-row"><span data-i18n="qvDimensions"></span><b id="qvDimVal"></b></div>
+        <div class="qv-spec-row"><span data-i18n="qvColor"></span><b id="qvColorVal"></b></div>
+      </div>
       <div class="price-row"><span class="price" id="qvPrice"></span><span class="old-price" id="qvOldPrice"></span></div>
       <div class="qv-actions">
         <button class="btn btn-gold" id="qvAddCart" data-i18n="qvAddCart"></button>
@@ -640,6 +649,7 @@ const I18N = {
     addCart:"+ سلة", orderNow:"اطلبي الآن", quickView:"عرض سريع",
     cartTitle:"سلة التسوق", cartEmpty:"سلتك فارغة حالياً", cartEmptySub:"أضيفي منتجاً لتبدئي التسوق ✦", cartTotal:"الإجمالي", checkoutBtn:"إتمام الطلب",
     qvAddCart:"أضيفي إلى السلة", qvOrderBtn:"اطلبي هذا المنتج",
+    qvDimensions:"الأبعاد", qvColor:"اللون",
     formTitle:"استمارة الطلب", formSub:"عبّئي بياناتك وسيصلنا طلبك مباشرة عبر واتساب",
     formName:"الاسم الكامل", formAddress:"العنوان", formPhone:"رقم التواصل", formProduct:"المنتج المطلوب", formColor:"اللون المفضل", formNotes:"ملاحظات إضافية (اختياري)", formSubmit:"إرسال الطلب عبر واتساب",
     formPriceLabel:"سعر المنتج", formPriceNote:"شاملة التوصيل ✓", formCity:"المدينة",
@@ -676,6 +686,7 @@ const I18N = {
     addCart:"+ Cart", orderNow:"Order Now", quickView:"Quick View",
     cartTitle:"Shopping Cart", cartEmpty:"Your cart is empty", cartEmptySub:"Add a product to start shopping ✦", cartTotal:"Total", checkoutBtn:"Checkout",
     qvAddCart:"Add to Cart", qvOrderBtn:"Order This Item",
+    qvDimensions:"Dimensions", qvColor:"Color",
     formTitle:"Order Form", formSub:"Fill in your details and your order will reach us directly on WhatsApp",
     formName:"Full Name", formAddress:"Address", formPhone:"Phone Number", formProduct:"Requested Item", formColor:"Preferred Color", formNotes:"Additional Notes (optional)", formSubmit:"Send Order via WhatsApp",
     formPriceLabel:"Item Price", formPriceNote:"Delivery included ✓", formCity:"City",
@@ -712,6 +723,7 @@ const I18N = {
     addCart:"+ Panier", orderNow:"Commander", quickView:"Aperçu rapide",
     cartTitle:"Panier", cartEmpty:"Votre panier est vide", cartEmptySub:"Ajoutez un produit pour commencer ✦", cartTotal:"Total", checkoutBtn:"Commander",
     qvAddCart:"Ajouter au panier", qvOrderBtn:"Commander cet article",
+    qvDimensions:"Dimensions", qvColor:"Couleur",
     formTitle:"Formulaire de Commande", formSub:"Remplissez vos informations et votre commande nous parviendra directement sur WhatsApp",
     formName:"Nom complet", formAddress:"Adresse", formPhone:"Numéro de téléphone", formProduct:"Article demandé", formColor:"Couleur préférée", formNotes:"Notes supplémentaires (facultatif)", formSubmit:"Envoyer la commande via WhatsApp",
     formPriceLabel:"Prix de l'article", formPriceNote:"Livraison incluse ✓", formCity:"Ville",
@@ -727,25 +739,36 @@ const I18N = {
    image: رابط صورة مباشر (ارفعيها على imgur.com) — اتركيها "" لعرض أيقونة حقيبة
    badge: "new" أو "sale" أو "bestseller" أو "" (بدون شارة)
    stock: رقم اختياري — إن وضعتِ رقماً 5 أو أقل تظهر شارة "متبقي X فقط" تلقائياً (احذفي السطر لعدم إظهار أي شارة مخزون)
+   dimensions: نص واحد يظهر بكل اللغات (مثال: "26 × 18 × 10 سم")
+   color: اسم اللون بثلاث لغات
    =========================================================== */
 const PRODUCTS = [
   { name:{ar:"حقيبة Aurora الذهبية", en:"Aurora Golden Bag", fr:"Sac doré Aurora"}, price:320, oldPrice:null, category:"bags",
-    desc:{ar:"حقيبة يد جلدية بلمسة ذهبية، مثالية للمناسبات المسائية.", en:"A leather handbag with a golden touch, perfect for evening occasions.", fr:"Un sac à main en cuir à la touche dorée, parfait pour les soirées."}, image:"", badge:"new" },
+    desc:{ar:"حقيبة يد جلدية بلمسة ذهبية، مثالية للمناسبات المسائية.", en:"A leather handbag with a golden touch, perfect for evening occasions.", fr:"Un sac à main en cuir à la touche dorée, parfait pour les soirées."},
+    dimensions:"26 × 18 × 10 سم", color:{ar:"ذهبي", en:"Gold", fr:"Doré"}, image:"", badge:"new" },
   { name:{ar:"حقيبة Lumière الصغيرة", en:"Lumière Small Bag", fr:"Petit sac Lumière"}, price:245, oldPrice:290, category:"bags",
-    desc:{ar:"حقيبة كتف صغيرة أنيقة، تناسب الإطلالات اليومية.", en:"An elegant small shoulder bag, perfect for everyday looks.", fr:"Un petit sac à bandoulière élégant, parfait pour un usage quotidien."}, image:"", badge:"sale" },
+    desc:{ar:"حقيبة كتف صغيرة أنيقة، تناسب الإطلالات اليومية.", en:"An elegant small shoulder bag, perfect for everyday looks.", fr:"Un petit sac à bandoulière élégant, parfait pour un usage quotidien."},
+    dimensions:"20 × 14 × 8 سم", color:{ar:"بيج", en:"Beige", fr:"Beige"}, image:"", badge:"sale" },
   { name:{ar:"محفظة Celeste", en:"Celeste Wallet", fr:"Portefeuille Celeste"}, price:140, oldPrice:null, category:"wallets",
-    desc:{ar:"محفظة جلدية أنيقة بتفاصيل ذهبية دقيقة.", en:"An elegant leather wallet with fine golden details.", fr:"Un portefeuille en cuir élégant aux détails dorés fins."}, image:"", badge:"" },
+    desc:{ar:"محفظة جلدية أنيقة بتفاصيل ذهبية دقيقة.", en:"An elegant leather wallet with fine golden details.", fr:"Un portefeuille en cuir élégant aux détails dorés fins."},
+    dimensions:"11 × 9 × 2 سم", color:{ar:"أسود", en:"Black", fr:"Noir"}, image:"", badge:"" },
   { name:{ar:"حقيبة يد Nocturne", en:"Nocturne Handbag", fr:"Sac à main Nocturne"}, price:410, oldPrice:null, category:"bags",
-    desc:{ar:"قطعة مميزة للسهرات، بتصميم فاخر وخامة راقية.", en:"A statement evening piece with a luxurious design and premium finish.", fr:"Une pièce de soirée d'exception, au design luxueux et à la finition raffinée."}, image:"", badge:"new" },
+    desc:{ar:"قطعة مميزة للسهرات، بتصميم فاخر وخامة راقية.", en:"A statement evening piece with a luxurious design and premium finish.", fr:"Une pièce de soirée d'exception, au design luxueux et à la finition raffinée."},
+    dimensions:"28 × 20 × 11 سم", color:{ar:"أسود", en:"Black", fr:"Noir"}, image:"", badge:"new" },
   { name:{ar:"طقم إكسسوارات Blossom", en:"Blossom Accessory Set", fr:"Ensemble d'accessoires Blossom"}, price:180, oldPrice:220, category:"accessories",
-    desc:{ar:"طقم إكسسوارات متكامل بلمسات ذهبية ناعمة.", en:"A complete accessory set with soft golden touches.", fr:"Un ensemble d'accessoires complet aux touches dorées délicates."}, image:"", badge:"sale" },
+    desc:{ar:"طقم إكسسوارات متكامل بلمسات ذهبية ناعمة.", en:"A complete accessory set with soft golden touches.", fr:"Un ensemble d'accessoires complet aux touches dorées délicates."},
+    dimensions:"مقاس واحد", color:{ar:"ذهبي", en:"Gold", fr:"Doré"}, image:"", badge:"sale" },
   { name:{ar:"حقيبة ظهر Selene", en:"Selene Backpack", fr:"Sac à dos Selene"}, price:295, oldPrice:null, category:"backpacks",
-    desc:{ar:"عملية وأنيقة، مثالية للاستخدام اليومي والسفر.", en:"Practical and elegant, ideal for everyday use and travel.", fr:"Pratique et élégant, idéal pour un usage quotidien et les voyages."}, image:"", badge:"" },
+    desc:{ar:"عملية وأنيقة، مثالية للاستخدام اليومي والسفر.", en:"Practical and elegant, ideal for everyday use and travel.", fr:"Pratique et élégant, idéal pour un usage quotidien et les voyages."},
+    dimensions:"32 × 24 × 13 سم", color:{ar:"بني", en:"Brown", fr:"Marron"}, image:"", badge:"" },
   { name:{ar:"محفظة Ivory الصغيرة", en:"Ivory Small Wallet", fr:"Petit portefeuille Ivory"}, price:120, oldPrice:null, category:"wallets",
-    desc:{ar:"محفظة أنيقة بحجم مناسب لجميع الاحتياجات اليومية.", en:"An elegant wallet, the right size for all your daily needs.", fr:"Un portefeuille élégant, à la taille idéale pour un usage quotidien."}, image:"", badge:"" },
+    desc:{ar:"محفظة أنيقة بحجم مناسب لجميع الاحتياجات اليومية.", en:"An elegant wallet, the right size for all your daily needs.", fr:"Un portefeuille élégant, à la taille idéale pour un usage quotidien."},
+    dimensions:"10 × 8 × 2 سم", color:{ar:"عاجي", en:"Ivory", fr:"Ivoire"}, image:"", badge:"" },
   { name:{ar:"إكسسوار Halo للشعر", en:"Halo Hair Accessory", fr:"Accessoire cheveux Halo"}, price:95, oldPrice:null, category:"accessories",
-    desc:{ar:"لمسة ذهبية أنيقة تكمل إطلالتك في أي مناسبة.", en:"An elegant golden touch that completes your look for any occasion.", fr:"Une touche dorée élégante qui complète votre look en toute occasion."}, image:"", badge:"new" }
+    desc:{ar:"لمسة ذهبية أنيقة تكمل إطلالتك في أي مناسبة.", en:"An elegant golden touch that completes your look for any occasion.", fr:"Une touche dorée élégante qui complète votre look en toute occasion."},
+    dimensions:"مقاس واحد", color:{ar:"ذهبي", en:"Gold", fr:"Doré"}, image:"", badge:"new" }
 ];
+
 
 const CATEGORY_KEYS = ["all","bags","wallets","backpacks","accessories"];
 
@@ -838,6 +861,7 @@ function renderProducts(){
     const idx = PRODUCTS.indexOf(p);
     const card = document.createElement('div');
     card.className = 'card';
+    card.dataset.idx = idx;
     card.innerHTML = `
       <div class="card-media">
         <div class="badges-row">
@@ -886,17 +910,22 @@ function shareProduct(idx){
 }
 
 function bindProductButtons(){
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.onclick = () => openQuickView(parseInt(card.dataset.idx));
+  });
   document.querySelectorAll('.wish-btn').forEach(btn => {
-    btn.onclick = () => {
+    btn.onclick = (e) => {
+      e.stopPropagation();
       const idx = btn.dataset.idx;
       if(wishlist.has(idx)){ wishlist.delete(idx); btn.classList.remove('active'); }
       else { wishlist.add(idx); btn.classList.add('active'); }
     };
   });
-  document.querySelectorAll('.share-btn').forEach(btn => { btn.onclick = () => shareProduct(parseInt(btn.dataset.idx)); });
-  document.querySelectorAll('.add-cart-btn').forEach(btn => { btn.onclick = () => addToCart(parseInt(btn.dataset.idx)); });
-  document.querySelectorAll('.quick-view').forEach(btn => { btn.onclick = () => openQuickView(parseInt(btn.dataset.idx)); });
-  document.querySelectorAll('[data-order="1"]').forEach(btn => { const p = PRODUCTS[parseInt(btn.dataset.idx)]; btn.onclick = () => openOrderForm(p.name[currentLang], p.price); });
+  document.querySelectorAll('.share-btn').forEach(btn => { btn.onclick = (e) => { e.stopPropagation(); shareProduct(parseInt(btn.dataset.idx)); }; });
+  document.querySelectorAll('.add-cart-btn').forEach(btn => { btn.onclick = (e) => { e.stopPropagation(); addToCart(parseInt(btn.dataset.idx)); }; });
+  document.querySelectorAll('.quick-view').forEach(btn => { btn.onclick = (e) => { e.stopPropagation(); openQuickView(parseInt(btn.dataset.idx)); }; });
+  document.querySelectorAll('[data-order="1"]').forEach(btn => { const p = PRODUCTS[parseInt(btn.dataset.idx)]; btn.onclick = (e) => { e.stopPropagation(); openOrderForm(p.name[currentLang], p.price); }; });
 }
 
 /* ===================== سلة التسوق ===================== */
@@ -970,12 +999,25 @@ let qvIdx = null;
 function openQuickView(idx){
   qvIdx = idx;
   const p = PRODUCTS[idx];
-  document.getElementById('qvMedia').innerHTML = `<button class="qv-close" id="qvCloseBtn2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f6efdd" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>` + (p.image ? `<img src="${p.image}" alt="${p.name[currentLang]}">` : bagIcon);
+  const isWished = wishlist.has(String(idx));
+  document.getElementById('qvMedia').innerHTML = `
+    <button class="qv-close" id="qvCloseBtn2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f6efdd" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="wish-btn qv-wish${isWished ? ' active' : ''}" id="qvWishBtn" aria-label="wishlist">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.2 2.3 4.5 6 4c2-.3 3.7.7 6 3 2.3-2.3 4-3.3 6-3 3.7.5 5.5 4.2 4 7.8-2.5 4.6-10 9.2-10 9.2Z"/></svg>
+    </button>
+    ${p.image ? `<img src="${p.image}" alt="${p.name[currentLang]}">` : bagIcon}`;
   document.getElementById('qvName').textContent = p.name[currentLang];
   document.getElementById('qvDesc').textContent = p.desc[currentLang];
+  document.getElementById('qvDimVal').textContent = p.dimensions || '—';
+  document.getElementById('qvColorVal').textContent = (p.color && p.color[currentLang]) || '—';
   document.getElementById('qvPrice').textContent = fmt(p.price);
   document.getElementById('qvOldPrice').textContent = p.oldPrice ? fmt(p.oldPrice) : '';
   document.getElementById('qvCloseBtn2').onclick = closeQuickView;
+  document.getElementById('qvWishBtn').onclick = (e) => {
+    const key = String(idx);
+    if(wishlist.has(key)){ wishlist.delete(key); e.currentTarget.classList.remove('active'); }
+    else { wishlist.add(key); e.currentTarget.classList.add('active'); }
+  };
   qvOverlay.classList.add('show');
 }
 function closeQuickView(){ qvOverlay.classList.remove('show'); }

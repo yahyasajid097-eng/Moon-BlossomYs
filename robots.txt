@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yahyasajid097-eng.github.io/Yahya/sitemap.xml
+Sitemap: https://yahyasajid097-eng.github.io/salamoona/sitemap.xml
