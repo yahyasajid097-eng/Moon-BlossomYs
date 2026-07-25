@@ -3,12 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moon Blossom | Bags &amp; Accessories</title>
-<meta name="description" content="Moon Blossom Ys — حقائب وإكسسوارات فاخرة. Bloom under the moon.">
+<title>Moon Blossom | حقائب وإكسسوارات فاخرة — Bags &amp; Accessories</title>
+<meta name="description" content="Moon Blossom Ys — حقائب وإكسسوارات فاخرة مغربية الصنع. اطلبي مباشرة عبر واتساب. Bloom under the moon.">
+<meta name="keywords" content="حقائب, إكسسوارات, حقائب يد, محافظ, Moon Blossom, المغرب, Bags, Accessories, Morocco">
+<meta name="theme-color" content="#0a0806">
+<link rel="canonical" href="https://yahyasajid097-eng.github.io/Yahya/">
+
+<!-- Open Graph (WhatsApp / Instagram / Facebook previews) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Moon Blossom">
+<meta property="og:title" content="Moon Blossom | حقائب وإكسسوارات فاخرة">
+<meta property="og:description" content="حقائب وإكسسوارات مختارة بعناية — ازدهري تحت ضوء القمر. اطلبي مباشرة عبر واتساب.">
+<meta property="og:image" content="https://yahyasajid097-eng.github.io/Yahya/logo.png">
+<meta property="og:url" content="https://yahyasajid097-eng.github.io/Yahya/">
+<meta property="og:locale" content="ar_MA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moon Blossom | Bags &amp; Accessories">
+<meta name="twitter:description" content="حقائب وإكسسوارات فاخرة — Bloom under the moon.">
+<meta name="twitter:image" content="https://yahyasajid097-eng.github.io/Yahya/logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<!-- تحليلات الزوار (اختياري): أنشئي حساباً مجانياً على plausible.io (لا يحتاج موافقة كوكيز)،
+     ثم أضيفي هذا السطر هنا بعد وضع نطاق موقعك الحقيقي بدل yourdomain:
+     [script defer data-domain="yourdomain.github.io" src="https://plausible.io/js/script.js"][/script] -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Moon Blossom Ys",
+  "description": "حقائب وإكسسوارات فاخرة — Bags & Accessories",
+  "url": "https://yahyasajid097-eng.github.io/Yahya/",
+  "logo": "https://yahyasajid097-eng.github.io/Yahya/logo.png",
+  "sameAs": ["https://www.instagram.com/moon_blossom.ys"]
+}
+</script>
 <style>
 :root{
   --bg:#0a0806; --bg-2:#110c08; --card:#16100a; --card-hi:#1c140c;
@@ -49,9 +85,38 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,8,6,.88); backdrop
 .nav-links a:hover{color:var(--gold-light);}
 .nav-links a:hover::after{width:100%;}
 .nav-actions{display:flex; align-items:center; gap:4px;}
-.lang-switch{display:flex; gap:2px; border:1px solid var(--line); border-radius:999px; padding:3px; margin-inline-end:6px;}
-.lang-btn{padding:5px 10px; border-radius:999px; font-size:.72rem; font-weight:700; color:var(--ink-faint); letter-spacing:.5px;}
+.lang-switch{display:flex; gap:2px; border:1px solid var(--line); border-radius:999px; padding:3px; margin-inline-end:6px; background:var(--card-hi);}
+.lang-btn{padding:6px 12px; border-radius:999px; font-size:.74rem; font-weight:700; color:var(--ink-faint); letter-spacing:.5px; transition:background .2s ease, color .2s ease;}
 .lang-btn.active{background:var(--gold); color:#1a1206;}
+.lang-btn:not(.active):hover{color:var(--gold-light);}
+.view-switch{display:flex; gap:2px; border:1px solid var(--line); border-radius:999px; padding:3px; margin-inline-end:6px; background:var(--card-hi);}
+.view-btn{width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--ink-faint); transition:background .2s ease, color .2s ease;}
+.view-btn svg{width:15px; height:15px;}
+.view-btn.active{background:var(--gold); color:#1a1206;}
+.view-btn:not(.active):hover{color:var(--gold-light);}
+
+/* ===== تبديل العرض اليدوي (جوال/حاسوب) — يتجاوز حجم الشاشة الفعلي ===== */
+html.force-mobile body{max-width:480px; margin:0 auto; box-shadow:0 0 60px rgba(0,0,0,.6); overflow-x:hidden;}
+html.force-mobile .nav-links{display:none !important;}
+html.force-mobile .burger{display:flex !important;}
+html.force-mobile #langSwitch{display:none !important;}
+html.force-mobile .grid{grid-template-columns:repeat(2,1fr) !important; gap:12px !important;}
+html.force-mobile .card-body{padding:12px 12px 14px !important;}
+html.force-mobile .card-body h3{font-size:.88rem !important;}
+html.force-mobile .card-body .desc{display:none !important;}
+html.force-mobile .card-actions{flex-direction:column !important; gap:6px !important;}
+html.force-mobile .foot-grid{grid-template-columns:1fr !important;}
+html.force-mobile .trust .wrap{grid-template-columns:repeat(2,1fr) !important;}
+html.force-mobile .qv-modal{grid-template-columns:1fr !important;}
+
+html.force-desktop body{min-width:1180px; overflow-x:auto;}
+html.force-desktop .nav-links{display:flex !important;}
+html.force-desktop .burger{display:none !important;}
+html.force-desktop #langSwitch{display:flex !important;}
+html.force-desktop .grid{grid-template-columns:repeat(auto-fit, minmax(255px,1fr)) !important;}
+html.force-desktop .foot-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr !important;}
+html.force-desktop .trust .wrap{grid-template-columns:repeat(4,1fr) !important;}
+html.force-desktop .qv-modal{grid-template-columns:1fr 1fr !important;}
 .icon-btn{position:relative; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--ink-dim); transition:background .2s ease, color .2s ease;}
 .icon-btn:hover{background:var(--card-hi); color:var(--gold-light);}
 .icon-btn svg{width:20px; height:20px;}
@@ -64,7 +129,8 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,8,6,.88); backdrop
 [dir="rtl"] .mobile-menu{transform:translateX(102%);}
 .mobile-menu.open{transform:translateX(0);}
 .mobile-menu a{font-size:1.05rem; color:var(--ink);}
-.mobile-menu .lang-switch{align-self:flex-start;}
+.mobile-menu .lang-switch{align-self:stretch; justify-content:space-between; padding:5px; margin-inline-end:0;}
+.mobile-menu .lang-btn{flex:1; text-align:center; padding:10px 8px; font-size:.85rem;}
 .menu-overlay{position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:85; opacity:0; pointer-events:none; transition:opacity .3s ease;}
 .menu-overlay.show{opacity:1; pointer-events:auto;}
 
@@ -104,6 +170,12 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,8,6,.88); backdrop
 .filter-chip{padding:9px 20px; border-radius:999px; border:1px solid var(--line); color:var(--ink-dim); font-size:.85rem; transition:all .25s ease;}
 .filter-chip:hover{border-color:var(--gold); color:var(--gold-light);}
 .filter-chip.active{background:var(--gold); color:#1a1206; border-color:var(--gold); font-weight:700;}
+.price-filter{display:flex; align-items:center; gap:10px; justify-content:center; margin:-16px auto 34px; color:var(--ink-faint); font-size:.85rem;}
+.price-filter input{
+  width:100px; padding:9px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card);
+  color:var(--ink); font-family:inherit; font-size:.85rem; text-align:center;
+}
+.price-filter input:focus{border-color:var(--gold);}
 .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(255px, 1fr)); gap:26px;}
 .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease, border-color .3s ease, box-shadow .3s ease;}
 .card.show{opacity:1; transform:translateY(0);}
@@ -116,7 +188,13 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,8,6,.88); backdrop
 .badge{font-size:.7rem; padding:4px 11px; border-radius:999px; border:1px solid; backdrop-filter:blur(4px);}
 .badge.new{background:rgba(201,162,77,.16); border-color:var(--gold-deep); color:var(--gold-light);}
 .badge.sale{background:rgba(122,47,61,.35); border-color:var(--wine-light); color:#f2c9d0;}
+.badge.bestseller{background:rgba(47,77,64,.4); border-color:var(--emerald-light); color:#bfe0d1;}
+.badge.stock{background:rgba(122,47,61,.5); border-color:var(--wine-light); color:#fff; animation:pulse-badge 2s ease-in-out infinite;}
+@keyframes pulse-badge{0%,100%{opacity:1;} 50%{opacity:.7;}}
 .wish-btn{position:absolute; top:12px; inset-inline-end:12px; z-index:2; width:34px; height:34px; border-radius:50%; background:rgba(10,8,6,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;}
+.share-btn{position:absolute; top:52px; inset-inline-end:12px; z-index:2; width:34px; height:34px; border-radius:50%; background:rgba(10,8,6,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;}
+.share-btn svg{width:15px; height:15px; stroke:var(--ink);}
+.share-btn:hover svg{stroke:var(--gold-light);}
 .wish-btn svg{width:16px; height:16px; stroke:var(--ink); fill:none; transition:fill .2s ease, stroke .2s ease;}
 .wish-btn.active svg{fill:var(--wine-light); stroke:var(--wine-light);}
 .quick-view{position:absolute; bottom:-46px; inset-inline-start:0; inset-inline-end:0; text-align:center; padding:10px; background:rgba(10,8,6,.82); color:var(--gold-light); font-size:.82rem; font-weight:700; transition:bottom .3s ease;}
@@ -247,7 +325,26 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
 
 @media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
 @media (max-width: 900px){.foot-grid{grid-template-columns:1fr 1fr;} .trust .wrap{grid-template-columns:repeat(2,1fr);} .qv-modal{grid-template-columns:1fr;}}
-@media (max-width: 720px){.nav-links{display:none;} .burger{display:flex;} .lang-switch{display:none;}}
+@media (max-width: 600px){
+  .grid{grid-template-columns:repeat(2,1fr); gap:12px;}
+  .card{border-radius:var(--radius-md);}
+  .card-body{padding:12px 12px 14px;}
+  .card-body h3{font-size:.88rem; margin-bottom:4px; line-height:1.35;}
+  .card-body .desc{display:none;}
+  .price{font-size:.95rem;}
+  .old-price{font-size:.72rem;}
+  .card-actions{flex-direction:column; gap:6px;}
+  .add-cart-btn, .order-btn{width:100%; justify-content:center; padding:8px 10px; font-size:.74rem;}
+  .wish-btn, .share-btn{width:28px; height:28px;}
+  .wish-btn svg, .share-btn svg{width:13px; height:13px;}
+  .share-btn{top:46px;}
+  .badge{font-size:.62rem; padding:3px 8px;}
+  .quick-view{font-size:.74rem; padding:8px;}
+  .price-filter input{width:84px; font-size:.8rem;}
+  .section-head h2{font-size:1.5rem;}
+  .hero img.logo-main{width:150px; height:150px;}
+}
+@media (max-width: 720px){.nav-links{display:none;} .burger{display:flex;} #langSwitch{display:none;}}
 @media (max-width: 520px){.foot-grid{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -275,6 +372,14 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
       <a href="#contact" data-i18n="navContact"></a>
     </div>
     <div class="nav-actions">
+      <div class="view-switch" id="viewSwitch">
+        <button class="view-btn" data-view="mobile" title="عرض الجوال / Mobile view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        </button>
+        <button class="view-btn" data-view="desktop" title="عرض الحاسوب / Desktop view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </button>
+      </div>
       <div class="lang-switch" id="langSwitch">
         <button class="lang-btn" data-lang="ar">AR</button>
         <button class="lang-btn" data-lang="en">EN</button>
@@ -356,6 +461,11 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
       <p data-i18n="productsSub"></p>
     </div>
     <div class="filters" id="filters"></div>
+    <div class="price-filter">
+      <input type="number" id="priceMin" min="0" data-i18n-ph="priceFrom">
+      <span>—</span>
+      <input type="number" id="priceMax" min="0" data-i18n-ph="priceTo">
+    </div>
     <div class="grid" id="productGrid"></div>
   </div>
 </section>
@@ -537,6 +647,7 @@ const I18N = {
     footShop:"تسوّقي", footAllProducts:"جميع المنتجات",
     footLinks:"روابط", footContact:"تواصلي معنا", footContactText:"متاحون على واتساب وانستغرام لأي استفسار حول المنتجات أو الطلبات.",
     catBags:"حقائب اليد", catWallets:"المحافظ", catBackpacks:"حقائب الظهر", catAccessories:"إكسسوارات", filterAll:"الكل",
+    priceFrom:"السعر من", priceTo:"إلى",
     addCart:"+ سلة", orderNow:"اطلبي الآن", quickView:"عرض سريع",
     cartTitle:"سلة التسوق", cartEmpty:"سلتك فارغة حالياً", cartEmptySub:"أضيفي منتجاً لتبدئي التسوق ✦", cartTotal:"الإجمالي", checkoutBtn:"إتمام الطلب",
     qvAddCart:"أضيفي إلى السلة", qvOrderBtn:"اطلبي هذا المنتج",
@@ -571,6 +682,7 @@ const I18N = {
     footShop:"Shop", footAllProducts:"All Products",
     footLinks:"Links", footContact:"Contact Us", footContactText:"Reach us on WhatsApp or Instagram for any question about products or orders.",
     catBags:"Handbags", catWallets:"Wallets", catBackpacks:"Backpacks", catAccessories:"Accessories", filterAll:"All",
+    priceFrom:"Price from", priceTo:"to",
     addCart:"+ Cart", orderNow:"Order Now", quickView:"Quick View",
     cartTitle:"Shopping Cart", cartEmpty:"Your cart is empty", cartEmptySub:"Add a product to start shopping ✦", cartTotal:"Total", checkoutBtn:"Checkout",
     qvAddCart:"Add to Cart", qvOrderBtn:"Order This Item",
@@ -605,6 +717,7 @@ const I18N = {
     footShop:"Boutique", footAllProducts:"Tous les produits",
     footLinks:"Liens", footContact:"Contactez-nous", footContactText:"Contactez-nous sur WhatsApp ou Instagram pour toute question sur les produits ou les commandes.",
     catBags:"Sacs à main", catWallets:"Portefeuilles", catBackpacks:"Sacs à dos", catAccessories:"Accessoires", filterAll:"Tous",
+    priceFrom:"Prix de", priceTo:"à",
     addCart:"+ Panier", orderNow:"Commander", quickView:"Aperçu rapide",
     cartTitle:"Panier", cartEmpty:"Votre panier est vide", cartEmptySub:"Ajoutez un produit pour commencer ✦", cartTotal:"Total", checkoutBtn:"Commander",
     qvAddCart:"Ajouter au panier", qvOrderBtn:"Commander cet article",
@@ -621,6 +734,8 @@ const I18N = {
 /* ===========================================================
    المنتجات — كل منتج بثلاث لغات (ar / en / fr)
    image: رابط صورة مباشر (ارفعيها على imgur.com) — اتركيها "" لعرض أيقونة حقيبة
+   badge: "new" أو "sale" أو "bestseller" أو "" (بدون شارة)
+   stock: رقم اختياري — إن وضعتِ رقماً 5 أو أقل تظهر شارة "متبقي X فقط" تلقائياً (احذفي السطر لعدم إظهار أي شارة مخزون)
    =========================================================== */
 const PRODUCTS = [
   { name:{ar:"حقيبة Aurora الذهبية", en:"Aurora Golden Bag", fr:"Sac doré Aurora"}, price:320, oldPrice:null, category:"bags",
@@ -675,6 +790,10 @@ function applyI18n(){
     const key = el.getAttribute('data-i18n');
     if(dict[key] !== undefined) el.textContent = dict[key];
   });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if(dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+  });
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang===currentLang));
   const genLink = waLink(dict.waGeneral);
   ["navWa","heroWa","footWa","floatWa"].forEach(id => { const el=document.getElementById(id); if(el) el.href = genLink; });
@@ -716,7 +835,14 @@ function renderFilters(){
 
 function renderProducts(){
   grid.innerHTML = '';
-  const list = PRODUCTS.filter(p => activeCat==='all' || p.category===activeCat);
+  const min = parseFloat(document.getElementById('priceMin').value);
+  const max = parseFloat(document.getElementById('priceMax').value);
+  const list = PRODUCTS.filter(p => {
+    if(activeCat!=='all' && p.category!==activeCat) return false;
+    if(!isNaN(min) && p.price < min) return false;
+    if(!isNaN(max) && p.price > max) return false;
+    return true;
+  });
   list.forEach(p => {
     const idx = PRODUCTS.indexOf(p);
     const card = document.createElement('div');
@@ -726,11 +852,16 @@ function renderProducts(){
         <div class="badges-row">
           ${p.badge==='new' ? `<span class="badge new">${currentLang==='ar'?'جديد':currentLang==='fr'?'Nouveau':'New'}</span>` : ''}
           ${p.badge==='sale' ? `<span class="badge sale">${currentLang==='ar'?'تخفيض':currentLang==='fr'?'Promo':'Sale'}</span>` : ''}
+          ${p.badge==='bestseller' ? `<span class="badge bestseller">${currentLang==='ar'?'الأكثر مبيعاً':currentLang==='fr'?'Meilleure vente':'Bestseller'}</span>` : ''}
+          ${(typeof p.stock==='number' && p.stock<=5) ? `<span class="badge stock">${currentLang==='ar'?'متبقي '+p.stock+' فقط':currentLang==='fr'?'Plus que '+p.stock:'Only '+p.stock+' left'}</span>` : ''}
         </div>
         <button class="wish-btn" data-idx="${idx}" aria-label="wishlist">
           <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.2 2.3 4.5 6 4c2-.3 3.7.7 6 3 2.3-2.3 4-3.3 6-3 3.7.5 5.5 4.2 4 7.8-2.5 4.6-10 9.2-10 9.2Z"/></svg>
         </button>
-        ${p.image ? `<img src="${p.image}" alt="${p.name[currentLang]}">` : bagIcon}
+        <button class="share-btn" data-idx="${idx}" aria-label="share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.7 15.8 6.3M8.2 13.3l7.6 4.4"/></svg>
+        </button>
+        ${p.image ? `<img src="${p.image}" alt="${p.name[currentLang]}" loading="lazy">` : bagIcon}
         <button class="quick-view" data-idx="${idx}">${t('quickView')}</button>
       </div>
       <div class="card-body">
@@ -753,6 +884,16 @@ function renderProducts(){
   bindProductButtons();
 }
 
+function shareProduct(idx){
+  const p = PRODUCTS[idx];
+  const text = `${p.name[currentLang]} — ${fmt(p.price)}\n${window.location.href}`;
+  if(navigator.share){
+    navigator.share({ title: p.name[currentLang], text }).catch(()=>{});
+  } else {
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+  }
+}
+
 function bindProductButtons(){
   document.querySelectorAll('.wish-btn').forEach(btn => {
     btn.onclick = () => {
@@ -761,6 +902,7 @@ function bindProductButtons(){
       else { wishlist.add(idx); btn.classList.add('active'); }
     };
   });
+  document.querySelectorAll('.share-btn').forEach(btn => { btn.onclick = () => shareProduct(parseInt(btn.dataset.idx)); });
   document.querySelectorAll('.add-cart-btn').forEach(btn => { btn.onclick = () => addToCart(parseInt(btn.dataset.idx)); });
   document.querySelectorAll('.quick-view').forEach(btn => { btn.onclick = () => openQuickView(parseInt(btn.dataset.idx)); });
   document.querySelectorAll('[data-order="1"]').forEach(btn => { const p = PRODUCTS[parseInt(btn.dataset.idx)]; btn.onclick = () => openOrderForm(p.name[currentLang], p.price); });
@@ -800,7 +942,7 @@ function renderCart(){
     total += p.price * c.qty;
     return `
       <div class="cart-item">
-        <div class="cart-item-media">${p.image ? `<img src="${p.image}" alt="${p.name[currentLang]}">` : bagIcon}</div>
+        <div class="cart-item-media">${p.image ? `<img src="${p.image}" alt="${p.name[currentLang]}" loading="lazy">` : bagIcon}</div>
         <div class="cart-item-info">
           <b>${p.name[currentLang]}</b>
           <span class="price">${fmt(p.price)}</span>
@@ -948,6 +1090,30 @@ for(let i=0;i<60;i++){
   s.style.animationDuration = (3 + Math.random()*3) + 's';
   starsWrap.appendChild(s);
 }
+
+/* ===================== تبديل العرض اليدوي (جوال / حاسوب) ===================== */
+const htmlRoot = document.getElementById('htmlRoot');
+const viewSwitch = document.getElementById('viewSwitch');
+function setForcedView(mode){
+  htmlRoot.classList.remove('force-mobile','force-desktop');
+  if(mode) htmlRoot.classList.add('force-' + mode);
+  viewSwitch.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view===mode));
+}
+viewSwitch.addEventListener('click', e => {
+  const btn = e.target.closest('.view-btn');
+  if(!btn) return;
+  const mode = btn.dataset.view;
+  setForcedView(btn.classList.contains('active') ? null : mode);
+});
+
+/* ===================== فلتر السعر ===================== */
+let priceDebounce;
+["priceMin","priceMax"].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => {
+    clearTimeout(priceDebounce);
+    priceDebounce = setTimeout(renderProducts, 300);
+  });
+});
 
 /* ===================== تشغيل أولي ===================== */
 applyI18n();
