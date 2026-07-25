@@ -94,6 +94,9 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,8,6,.88); backdrop
 .view-btn svg{width:15px; height:15px;}
 .view-btn.active{background:var(--gold); color:#1a1206;}
 .view-btn:not(.active):hover{color:var(--gold-light);}
+.view-switch-mobile{align-self:stretch; justify-content:space-between; padding:5px; margin-inline-end:0;}
+.view-switch-mobile .view-btn{flex:1; width:auto; height:auto; padding:10px 8px; gap:6px; font-size:.82rem; border-radius:999px;}
+.view-switch-mobile .view-btn svg{width:15px; height:15px;}
 
 /* ===== تبديل العرض اليدوي (جوال/حاسوب) — يتجاوز حجم الشاشة الفعلي ===== */
 html.force-mobile body{max-width:480px; margin:0 auto; box-shadow:0 0 60px rgba(0,0,0,.6); overflow-x:hidden;}
@@ -344,7 +347,8 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
   .section-head h2{font-size:1.5rem;}
   .hero img.logo-main{width:150px; height:150px;}
 }
-@media (max-width: 720px){.nav-links{display:none;} .burger{display:flex;} #langSwitch{display:none;}}
+@media (max-width: 720px){.nav-links{display:none;} .burger{display:flex;} #langSwitch{display:none;} #viewSwitch{display:none;} .nav-cta span{display:none;} .nav-cta{padding:9px 12px;}}
+@media (max-width: 480px){.nav{padding:10px 14px; gap:8px;} .brand span{font-size:1rem;} .brand img{width:36px; height:36px;}}
 @media (max-width: 520px){.foot-grid{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -385,9 +389,6 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
         <button class="lang-btn" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="fr">FR</button>
       </div>
-      <button class="icon-btn" id="wishNavBtn" aria-label="Wishlist">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.2 2.3 4.5 6 4c2-.3 3.7.7 6 3 2.3-2.3 4-3.3 6-3 3.7.5 5.5 4.2 4 7.8-2.5 4.6-10 9.2-10 9.2Z"/></svg>
-      </button>
       <button class="icon-btn" id="cartBtn" aria-label="Cart">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/><path d="M2.5 3h2l2.6 12.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
         <span class="count-badge" id="cartCount">0</span>
@@ -405,6 +406,16 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
     <button class="lang-btn" data-lang="ar">AR</button>
     <button class="lang-btn" data-lang="en">EN</button>
     <button class="lang-btn" data-lang="fr">FR</button>
+  </div>
+  <div class="view-switch view-switch-mobile" id="viewSwitchMobile">
+    <button class="view-btn" data-view="mobile" title="عرض الجوال / Mobile view">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+      <span data-i18n="viewMobile"></span>
+    </button>
+    <button class="view-btn" data-view="desktop" title="عرض الحاسوب / Desktop view">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <span data-i18n="viewDesktop"></span>
+    </button>
   </div>
   <a href="#products" data-i18n="navProducts"></a>
   <a href="#story" data-i18n="navStory"></a>
@@ -648,6 +659,7 @@ const I18N = {
     footLinks:"روابط", footContact:"تواصلي معنا", footContactText:"متاحون على واتساب وانستغرام لأي استفسار حول المنتجات أو الطلبات.",
     catBags:"حقائب اليد", catWallets:"المحافظ", catBackpacks:"حقائب الظهر", catAccessories:"إكسسوارات", filterAll:"الكل",
     priceFrom:"السعر من", priceTo:"إلى",
+    viewMobile:"عرض الجوال", viewDesktop:"عرض الحاسوب",
     addCart:"+ سلة", orderNow:"اطلبي الآن", quickView:"عرض سريع",
     cartTitle:"سلة التسوق", cartEmpty:"سلتك فارغة حالياً", cartEmptySub:"أضيفي منتجاً لتبدئي التسوق ✦", cartTotal:"الإجمالي", checkoutBtn:"إتمام الطلب",
     qvAddCart:"أضيفي إلى السلة", qvOrderBtn:"اطلبي هذا المنتج",
@@ -683,6 +695,7 @@ const I18N = {
     footLinks:"Links", footContact:"Contact Us", footContactText:"Reach us on WhatsApp or Instagram for any question about products or orders.",
     catBags:"Handbags", catWallets:"Wallets", catBackpacks:"Backpacks", catAccessories:"Accessories", filterAll:"All",
     priceFrom:"Price from", priceTo:"to",
+    viewMobile:"Mobile view", viewDesktop:"Desktop view",
     addCart:"+ Cart", orderNow:"Order Now", quickView:"Quick View",
     cartTitle:"Shopping Cart", cartEmpty:"Your cart is empty", cartEmptySub:"Add a product to start shopping ✦", cartTotal:"Total", checkoutBtn:"Checkout",
     qvAddCart:"Add to Cart", qvOrderBtn:"Order This Item",
@@ -718,6 +731,7 @@ const I18N = {
     footLinks:"Liens", footContact:"Contactez-nous", footContactText:"Contactez-nous sur WhatsApp ou Instagram pour toute question sur les produits ou les commandes.",
     catBags:"Sacs à main", catWallets:"Portefeuilles", catBackpacks:"Sacs à dos", catAccessories:"Accessoires", filterAll:"Tous",
     priceFrom:"Prix de", priceTo:"à",
+    viewMobile:"Vue mobile", viewDesktop:"Vue bureau",
     addCart:"+ Panier", orderNow:"Commander", quickView:"Aperçu rapide",
     cartTitle:"Panier", cartEmpty:"Votre panier est vide", cartEmptySub:"Ajoutez un produit pour commencer ✦", cartTotal:"Total", checkoutBtn:"Commander",
     qvAddCart:"Ajouter au panier", qvOrderBtn:"Commander cet article",
@@ -930,7 +944,9 @@ function changeQty(idx, delta){
   renderCart();
 }
 function renderCart(){
-  cartCountEl.textContent = cart.reduce((s,c)=>s+c.qty,0);
+  const totalQty = cart.reduce((s,c)=>s+c.qty,0);
+  cartCountEl.textContent = totalQty;
+  cartCountEl.style.display = totalQty > 0 ? 'flex' : 'none';
   if(cart.length===0){
     cartItemsEl.innerHTML = `<div class="cart-empty">${t('cartEmpty')}<br>${t('cartEmptySub')}</div>`;
     cartTotalEl.textContent = fmt(0);
@@ -1093,18 +1109,19 @@ for(let i=0;i<60;i++){
 
 /* ===================== تبديل العرض اليدوي (جوال / حاسوب) ===================== */
 const htmlRoot = document.getElementById('htmlRoot');
-const viewSwitch = document.getElementById('viewSwitch');
+const allViewSwitches = document.querySelectorAll('.view-switch');
 function setForcedView(mode){
   htmlRoot.classList.remove('force-mobile','force-desktop');
   if(mode) htmlRoot.classList.add('force-' + mode);
-  viewSwitch.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view===mode));
+  allViewSwitches.forEach(sw => sw.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view===mode)));
 }
-viewSwitch.addEventListener('click', e => {
+allViewSwitches.forEach(sw => sw.addEventListener('click', e => {
   const btn = e.target.closest('.view-btn');
   if(!btn) return;
   const mode = btn.dataset.view;
   setForcedView(btn.classList.contains('active') ? null : mode);
-});
+  closeMenu();
+}));
 
 /* ===================== فلتر السعر ===================== */
 let priceDebounce;
