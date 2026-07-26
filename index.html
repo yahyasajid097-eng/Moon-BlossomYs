@@ -210,10 +210,6 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,8,6,.88); backdrop
 .newsletter{position:relative; z-index:1; padding:70px 24px; background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center;}
 .newsletter h2{font-size:clamp(1.5rem,2.8vw,2rem); margin-bottom:10px;}
 .newsletter p{color:var(--ink-dim); margin-bottom:26px;}
-.news-form{display:flex; gap:10px; max-width:420px; margin:0 auto; flex-wrap:wrap; justify-content:center;}
-.news-form input{flex:1; min-width:220px; padding:13px 18px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:.9rem;}
-.news-form input:focus{border-color:var(--gold);}
-.news-form button{padding:13px 26px; border-radius:999px; background:var(--gold); color:#1a1206; font-weight:700; font-size:.9rem; white-space:nowrap;}
 
 footer{position:relative; z-index:1; padding:60px 24px 26px;}
 .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:32px; margin-bottom:40px;}
@@ -487,10 +483,7 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
   <div class="wrap">
     <h2 data-i18n="newsletterTitle"></h2>
     <p data-i18n="newsletterSub"></p>
-    <form class="news-form" id="newsForm">
-      <input type="email" id="newsInput" required>
-      <button type="submit" id="newsBtn" data-i18n="newsletterBtn"></button>
-    </form>
+    <a class="btn btn-gold" id="newsWaBtn" target="_blank" rel="noopener" data-i18n="newsletterBtn"></a>
   </div>
 </section>
 
@@ -811,6 +804,8 @@ function applyI18n(){
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang===currentLang));
   const genLink = waLink(dict.waGeneral);
   ["navWa","heroWa","footWa","floatWa"].forEach(id => { const el=document.getElementById(id); if(el) el.href = genLink; });
+  const newsWaEl = document.getElementById('newsWaBtn');
+  if(newsWaEl) newsWaEl.href = INSTAGRAM_URL;
   renderFilters();
   renderProducts();
   renderCart();
@@ -1098,16 +1093,6 @@ function renderFaq(){
     faqList.appendChild(item);
   });
 }
-
-/* ===================== النشرة البريدية ===================== */
-document.getElementById('newsForm').addEventListener('submit', e => {
-  e.preventDefault();
-  document.getElementById('newsInput').value = '';
-  const btn = document.getElementById('newsBtn');
-  const original = btn.textContent;
-  btn.textContent = '✓';
-  setTimeout(()=> btn.textContent = original, 2000);
-});
 
 /* ===================== ظهور العناصر عند التمرير ===================== */
 const io = new IntersectionObserver((entries) => {
