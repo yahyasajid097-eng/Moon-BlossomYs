@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>مجموعة الحقائب | Moon Blossom — التوصيل شامل في السعر</title>
+<meta name="description" content="مجموعة حقائب Moon Blossom — صناعة إسبانية، لمسات ذهبية فاخرة. اطلبي مباشرة عبر واتساب، التوصيل شامل في السعر.">
+<meta name="theme-color" content="#0a0806">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Moon Blossom">
+<meta property="og:title" content="مجموعة حقائب Moon Blossom">
+<meta property="og:description" content="صناعة إسبانية، لمسات ذهبية فاخرة. التوصيل شامل في السعر.">
+<meta property="og:image" content="images/Bagco1.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
+
+<style>
+:root{
+  --bg:#0a0806; --bg-2:#110c08; --card:#16100a; --card-hi:#1c140c;
+  --line:rgba(201,162,77,.18); --line-hi:rgba(201,162,77,.4);
+  --gold:#c9a24d; --gold-light:#ecd28f; --gold-deep:#8a6a2f;
+  --emerald:#2f4d40; --emerald-light:#4f7a67;
+  --ink:#f6efdd; --ink-dim:#b6a888; --ink-faint:#7d735c;
+  --whatsapp:#25d366; --radius-lg:20px; --radius-md:14px; --radius-sm:10px; --maxw:560px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--ink); font-family:'Cairo',sans-serif; line-height:1.7; overflow-x:hidden;}
+h1,h2,.display{font-family:'Aref Ruqaa', serif; font-weight:700; color:var(--gold-light);}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+button{cursor:pointer; border:none; background:none; color:inherit; font-family:inherit;}
+::selection{background:var(--gold); color:#000;}
+:focus-visible{outline:2px solid var(--gold-light); outline-offset:3px;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+@media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
+
+#stars{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;}
+.star{position:absolute; width:3px; height:3px; border-radius:50%; background:var(--gold-light); opacity:.15; animation:twinkle 4s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:.08; transform:scale(1);} 50%{opacity:.85; transform:scale(1.6);}}
+
+.hero{position:relative; z-index:1; text-align:center; padding:34px 20px 20px;}
+.hero img.logo-main{width:72px; height:72px; border-radius:50%; margin:0 auto 14px; box-shadow:0 0 40px -10px rgba(201,162,77,.4);}
+.hero .eyebrow{color:var(--gold-deep); letter-spacing:1px; font-size:.78rem; margin-bottom:8px;}
+.hero h1{font-size:1.5rem; line-height:1.4; margin-bottom:8px;}
+.hero p{color:var(--ink-dim); font-size:.9rem; max-width:400px; margin:0 auto;}
+
+.trust{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; max-width:var(--maxw); margin:18px auto 6px; padding:0 20px;}
+.trust span{background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:.74rem; color:var(--ink-dim); display:flex; align-items:center; gap:6px;}
+.trust span svg{width:13px; height:13px; color:var(--gold);}
+
+.grid{position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:20px 16px 30px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; display:flex; flex-direction:column;}
+.card-media{aspect-ratio:1/1; background:radial-gradient(circle at 50% 30%, #1e160c 0%, #0d0a06 75%); position:relative; overflow:hidden;}
+.card-media img{width:100%; height:100%; object-fit:cover;}
+.card-badge{position:absolute; top:9px; inset-inline-start:9px; background:rgba(201,162,77,.2); border:1px solid var(--gold-deep); color:var(--gold-light); font-size:.62rem; padding:3px 10px; border-radius:999px; backdrop-filter:blur(3px);}
+.card-body{padding:12px 12px 14px; display:flex; flex-direction:column; gap:6px; flex:1;}
+.card-body h3{font-size:.86rem; font-weight:600; color:var(--ink); line-height:1.35; font-family:'Cairo',sans-serif;}
+.card-body .price{color:var(--gold-light); font-family:'Aref Ruqaa', serif; font-size:1.1rem;}
+.card-body .color{color:var(--ink-faint); font-size:.72rem;}
+.order-btn{margin-top:auto; display:flex; align-items:center; justify-content:center; gap:6px; background:var(--whatsapp); color:#06210f; padding:9px 10px; border-radius:999px; font-size:.76rem; font-weight:700;}
+.order-btn:active{transform:scale(.97);}
+
+.section-note{text-align:center; padding:0 20px 16px; color:var(--ink-faint); font-size:.8rem;}
+
+footer{position:relative; z-index:1; text-align:center; padding:10px 20px 100px; color:var(--gold-deep); font-size:.76rem;}
+footer a{color:var(--ink-faint); text-decoration:underline;}
+
+.float-wa{position:fixed; bottom:22px; inset-inline-end:22px; z-index:60; width:56px; height:56px; border-radius:50%; background:var(--whatsapp); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px -6px rgba(37,211,102,.65); animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 10px 30px -6px rgba(37,211,102,.65);} 50%{box-shadow:0 10px 30px -2px rgba(37,211,102,.95);}}
+
+/* نموذج الطلب */
+.form-overlay{position:fixed; inset:0; background:rgba(0,0,0,.72); z-index:98; opacity:0; pointer-events:none; transition:opacity .3s ease; display:flex; align-items:flex-end; justify-content:center;}
+.form-overlay.show{opacity:1; pointer-events:auto;}
+.form-modal{background:var(--bg-2); border:1px solid var(--line); border-radius:22px 22px 0 0; max-width:var(--maxw); width:100%; max-height:92vh; overflow-y:auto; padding:26px 22px 30px; position:relative; transform:translateY(40px); transition:transform .3s ease;}
+.form-overlay.show .form-modal{transform:translateY(0);}
+.form-modal h3{font-size:1.2rem; margin-bottom:4px;}
+.form-modal .form-sub{color:var(--ink-dim); font-size:.85rem; margin-bottom:20px;}
+.form-close{position:absolute; top:16px; inset-inline-end:16px; width:32px; height:32px; border-radius:50%; background:var(--card-hi); display:flex; align-items:center; justify-content:center; color:var(--ink-dim);}
+.field{margin-bottom:14px;}
+.field label{display:block; font-size:.82rem; color:var(--ink-dim); margin-bottom:6px;}
+.field input, .field textarea{
+  width:100%; padding:12px 15px; border-radius:var(--radius-sm); border:1px solid var(--line);
+  background:var(--card); color:var(--ink); font-family:inherit; font-size:.9rem; resize:vertical;
+}
+.field input:focus, .field textarea:focus{border-color:var(--gold);}
+.form-submit{width:100%; padding:15px; border-radius:999px; background:var(--whatsapp); color:#06210f; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px; margin-top:8px; font-size:.96rem;}
+.form-submit:active{transform:scale(.98);}
+</style>
+</head>
+<body>
+
+<div id="stars"></div>
+
+<section class="hero">
+  <img class="logo-main" src="logo.png" alt="Moon Blossom">
+  <div class="eyebrow">Bloom under the moon</div>
+  <h1>مجموعة حقائب Moon Blossom</h1>
+  <p>قطع مختارة بعناية، صناعة إسبانية بلمسات ذهبية فاخرة</p>
+</section>
+
+<div class="trust">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13v10H3z"/><path d="M16 10h3l2 3v4h-5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg> توصيل 24 ساعة</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v13H7l-3 3z"/></svg> دفع عند الاستلام</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/></svg> صناعة إسبانية</span>
+</div>
+
+<div class="grid" id="productGrid"></div>
+
+<div class="section-note">التوصيل شامل في جميع الأسعار المعروضة ✓</div>
+
+<footer>
+  Moon Blossom Ys · <a href="https://www.instagram.com/moon_blossom.ys" target="_blank" rel="noopener">Instagram</a> · <a href="index.html">تصفّحي الموقع الكامل</a>
+</footer>
+
+<a class="float-wa" id="floatWa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#06210f"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/></svg>
+</a>
+
+<!-- نموذج الطلب -->
+<div class="form-overlay" id="formOverlay">
+  <div class="form-modal">
+    <button class="form-close" id="formCloseBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <h3>إتمام الطلب</h3>
+    <p class="form-sub" id="formSub"></p>
+    <form id="orderForm">
+      <div class="field"><label>الاسم الكامل</label><input type="text" id="fName" required></div>
+      <div class="field"><label>العنوان</label><input type="text" id="fAddress" required></div>
+      <div class="field"><label>المدينة</label><input type="text" id="fCity" required></div>
+      <div class="field"><label>رقم التواصل</label><input type="tel" id="fPhone" required></div>
+      <div class="field"><label>ملاحظات إضافية (اختياري)</label><textarea id="fNotes" rows="2"></textarea></div>
+      <button type="submit" class="form-submit">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06210f"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/></svg>
+        إرسال الطلب عبر واتساب
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+const WHATSAPP_NUMBER = "212651958378";
+
+/* صورة أساسية واحدة لكل منتج */
+const PRODUCTS = [
+  { name:"حقيبة Bagco بيج", price:299, color:"بيج", image:"images/Bagco1.jpg", badge:"جديد" },
+  { name:"حقيبة ERICK&CO أزرق", price:299, color:"أزرق (سماوي وغامق)", image:"images/ERICK&CO Blue1.jpg", badge:"جديد" },
+  { name:"حقيبة ERICK&CO أسود", price:299, color:"أسود", image:"images/ERICK&CO black1.jpg", badge:"جديد" },
+  { name:"حقيبة ERICK&CO كاراميل", price:299, color:"بني كاراميل", image:"images/ERICK&CO maron1.jpg", badge:"" },
+  { name:"حقيبة ELISA BAG", price:249, color:"أسود", image:"images/Sac1.jpg", badge:"" }
+];
+
+const bagIcon = `<svg viewBox="0 0 64 64" fill="none" stroke="#c9a24d" stroke-width="1.6" style="width:36%;height:36%;opacity:.5;margin:auto;"><path d="M18 24h28l2 30a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4l2-30Z"/><path d="M24 24v-6a8 8 0 0 1 16 0v6"/></svg>`;
+
+const grid = document.getElementById('productGrid');
+PRODUCTS.forEach((p, idx) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="card-media">
+      ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ''}
+      ${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy">` : bagIcon}
+    </div>
+    <div class="card-body">
+      <h3>${p.name}</h3>
+      <span class="price">${p.price} DH</span>
+      <span class="color">${p.color}</span>
+      <button class="order-btn" data-idx="${idx}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#06210f"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/></svg>
+        اطلبي
+      </button>
+    </div>`;
+  grid.appendChild(card);
+});
+
+/* ===== نموذج الطلب ===== */
+const formOverlay = document.getElementById('formOverlay');
+const formSub = document.getElementById('formSub');
+let currentProduct = null;
+
+function openForm(idx){
+  currentProduct = PRODUCTS[idx];
+  formSub.textContent = `${currentProduct.name} — ${currentProduct.price} DH (التوصيل شامل)`;
+  formOverlay.classList.add('show');
+}
+function closeForm(){ formOverlay.classList.remove('show'); }
+document.querySelectorAll('.order-btn').forEach(btn => {
+  btn.onclick = () => openForm(parseInt(btn.dataset.idx));
+});
+document.getElementById('formCloseBtn').onclick = closeForm;
+formOverlay.addEventListener('click', e => { if(e.target === formOverlay) closeForm(); });
+
+document.getElementById('orderForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('fName').value.trim();
+  const address = document.getElementById('fAddress').value.trim();
+  const city = document.getElementById('fCity').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const notes = document.getElementById('fNotes').value.trim();
+
+  let msg = `✨ طلب جديد — Moon Blossom\n\n`;
+  msg += `المنتج: ${currentProduct.name}\n`;
+  msg += `اللون: ${currentProduct.color}\n`;
+  msg += `السعر (شامل التوصيل): ${currentProduct.price} DH\n\n`;
+  msg += `الاسم: ${name}\n`;
+  msg += `العنوان: ${address}\n`;
+  msg += `المدينة: ${city}\n`;
+  msg += `رقم التواصل: ${phone}\n`;
+  if(notes) msg += `\nملاحظات: ${notes}\n`;
+
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+  closeForm();
+});
+
+document.getElementById('floatWa').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('مرحباً Moon Blossom ✨ أرغب بالاستفسار عن منتجاتكم')}`;
+
+/* ===== خلفية النجوم ===== */
+const starsWrap = document.getElementById('stars');
+for(let i=0;i<40;i++){
+  const s = document.createElement('div');
+  s.className = 'star';
+  s.style.top = Math.random()*100 + '%';
+  s.style.left = Math.random()*100 + '%';
+  s.style.animationDelay = (Math.random()*4) + 's';
+  s.style.animationDuration = (3 + Math.random()*3) + 's';
+  starsWrap.appendChild(s);
+}
+</script>
+</body>
+</html>
