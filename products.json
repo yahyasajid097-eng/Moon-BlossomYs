@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "updated": "2026-10-02T00:00:00Z",
+  "products": [
+    {
+      "name": {
+        "ar": "حقيبة Bagco بيج",
+        "en": "Bagco Beige Bag",
+        "fr": "Sac Bagco beige"
+      },
+      "price": 299,
+      "oldPrice": null,
+      "category": "bags",
+      "desc": {
+        "ar": "حقيبة نسائية بتصميم أنيق وعصري، تجمع بين الأناقة والعملية، مع تفاصيل دقيقة ولمسات ذهبية تمنحها حضورًا راقيًا. صناعة إسبانية، بسلسلة وإكسسوارات معدنية فاخرة.",
+        "en": "An elegant, modern women's bag combining style and practicality, with fine details and golden touches for a refined look. Made in Spain, featuring a chain and premium metal accessories.",
+        "fr": "Un sac femme élégant et moderne, alliant style et praticité, avec des détails fins et des touches dorées pour une allure raffinée. Fabriqué en Espagne, avec une chaîne et des accessoires métalliques de qualité."
+      },
+      "dimensions": "25 × 11 × 15 سم",
+      "color": {
+        "ar": "بيج",
+        "en": "Beige",
+        "fr": "Beige"
+      },
+      "images": [
+        "images/Bagco1.jpg",
+        "images/Bagco2.jpg",
+        "images/Bagco3.jpg"
+      ],
+      "badge": "new",
+      "id": "p1"
+    },
+    {
+      "name": {
+        "ar": "حقيبة ERICK&CO أزرق",
+        "en": "ERICK&CO Blue Bag",
+        "fr": "Sac ERICK&CO bleu"
+      },
+      "price": 299,
+      "oldPrice": null,
+      "category": "bags",
+      "desc": {
+        "ar": "حقيبة نسائية بتصميم أنيق وعصري، تجمع بين الأناقة والعملية، بخليط بين الأزرق السماوي والأزرق الغامق ولمسات ذهبية تمنحها حضورًا راقيًا. صناعة إسبانية.",
+        "en": "An elegant, modern women's bag combining style and practicality, in a sky-blue and dark-blue mix with golden touches for a refined look. Made in Spain.",
+        "fr": "Un sac femme élégant et moderne, alliant style et praticité, dans un mélange de bleu ciel et bleu foncé avec des touches dorées pour une allure raffinée. Fabriqué en Espagne."
+      },
+      "dimensions": "26 × 10 × 15 سم",
+      "color": {
+        "ar": "أزرق (سماوي وغامق)",
+        "en": "Blue (sky & dark mix)",
+        "fr": "Bleu (ciel et foncé)"
+      },
+      "images": [
+        "images/ERICK&CO Blue1.jpg",
+        "images/ERICK&CO Blue2.jpg",
+        "images/ERICK&CO Blue3.jpg"
+      ],
+      "badge": "new",
+      "id": "p2"
+    },
+    {
+      "name": {
+        "ar": "حقيبة ERICK&CO أسود",
+        "en": "ERICK&CO Black Bag",
+        "fr": "Sac ERICK&CO noir"
+      },
+      "price": 299,
+      "oldPrice": null,
+      "category": "bags",
+      "desc": {
+        "ar": "حقيبة نسائية بتصميم أنيق وعصري باللون الأسود، مع مساحة عملية أكبر لتنظيم أغراضك وسلسلة طويلة بلمسة فاخرة تساعد على حملها. صناعة إسبانية.",
+        "en": "An elegant, modern black women's bag with extra practical space to organize your belongings and a long premium-touch chain for easy carrying. Made in Spain.",
+        "fr": "Un sac femme élégant et moderne en noir, avec un espace pratique plus grand pour organiser vos affaires et une longue chaîne raffinée facilitant le port. Fabriqué en Espagne."
+      },
+      "dimensions": "24 × 10 × 18 سم",
+      "color": {
+        "ar": "أسود",
+        "en": "Black",
+        "fr": "Noir"
+      },
+      "images": [
+        "images/ERICK&CO black1.jpg",
+        "images/ERICK&CO black2.jpg",
+        "images/ERICK&CO black3.jpg"
+      ],
+      "badge": "new",
+      "id": "p3"
+    },
+    {
+      "name": {
+        "ar": "حقيبة ERICK&CO كاراميل",
+        "en": "ERICK&CO Caramel Bag",
+        "fr": "Sac ERICK&CO caramel"
+      },
+      "price": 299,
+      "oldPrice": null,
+      "category": "bags",
+      "desc": {
+        "ar": "حقيبة نسائية بتصميم أنيق وعصري باللون البني الكاراميل، تجمع بين الأناقة والعملية مع سلسلة وإكسسوارات معدنية بلمسة فاخرة. صناعة إسبانية.",
+        "en": "An elegant, modern women's bag in caramel brown, combining style and practicality with a chain and premium metal accessories. Made in Spain.",
+        "fr": "Un sac femme élégant et moderne en brun caramel, alliant style et praticité avec une chaîne et des accessoires métalliques raffinés. Fabriqué en Espagne."
+      },
+      "dimensions": "26 × 10 × 15 سم",
+      "color": {
+        "ar": "بني كاراميل",
+        "en": "Caramel Brown",
+        "fr": "Brun caramel"
+      },
+      "images": [
+        "images/ERICK&CO maron3.jpg",
+        "images/ERICK&CO maron2.jpg",
+        "images/ERICK&CO maron1.jpg"
+      ],
+      "badge": "",
+      "id": "p4"
+    },
+    {
+      "name": {
+        "ar": "حقيبة ELISA BAG",
+        "en": "ELISA Bag",
+        "fr": "Sac ELISA"
+      },
+      "price": 249,
+      "oldPrice": null,
+      "category": "bags",
+      "desc": {
+        "ar": "حقيبة نسائية بتصميم أنيق وعصري باللون الأسود، تجمع بين الأناقة والعملية مع تفاصيل دقيقة ولمسات ذهبية تمنحها حضورًا راقيًا. صناعة إسبانية.",
+        "en": "An elegant, modern black women's bag combining style and practicality, with fine details and golden touches for a refined look. Made in Spain.",
+        "fr": "Un sac femme élégant et moderne en noir, alliant style et praticité, avec des détails fins et des touches dorées pour une allure raffinée. Fabriqué en Espagne."
+      },
+      "dimensions": "22 × 7 × 18 سم",
+      "color": {
+        "ar": "أسود",
+        "en": "Black",
+        "fr": "Noir"
+      },
+      "images": [
+        "images/Sac1.jpg",
+        "images/Sac2.jpg",
+        "images/Sac3.jpg"
+      ],
+      "badge": "",
+      "id": "p5"
+    }
+  ]
+}

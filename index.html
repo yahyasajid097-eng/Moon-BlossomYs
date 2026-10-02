@@ -328,6 +328,17 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
 @media (max-width: 720px){.nav-links{display:none;} .burger{display:flex;} #langSwitch{display:none;} #viewSwitch{display:none;} .nav-cta span{display:none;} .nav-cta{padding:9px 12px;}}
 @media (max-width: 480px){.nav{padding:10px 14px; gap:8px;} .brand span{font-size:1rem;} .brand img{width:36px; height:36px;}}
 @media (max-width: 520px){.foot-grid{grid-template-columns:1fr;}}
+
+/* ===== ترتيب جديد: الشعار ثم المنتجات مباشرة ===== */
+.hero{min-height:auto; padding:30px 24px 4px;}
+.hero img.logo-main{width:116px; height:116px; margin-bottom:12px;}
+.hero h1{margin-bottom:6px; font-size:clamp(1.7rem,5vw,2.6rem);}
+.hero-glow{height:360px; top:0;}
+.products{padding:14px 24px 70px;}
+.products .section-head{margin-bottom:22px;}
+.hero-more{position:relative; z-index:1; text-align:center; padding:10px 24px 56px;}
+.hero-more p.sub{color:var(--ink-dim); max-width:540px; margin:0 auto 26px; font-size:1.03rem;}
+@media (max-width:600px){ .hero img.logo-main{width:104px; height:104px;} }
 </style>
 </head>
 <body>
@@ -403,9 +414,28 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
 
 <section class="hero">
   <div class="hero-glow"></div>
-  <div class="eyebrow" data-i18n="heroEyebrow"></div>
   <img class="logo-main" src="logo.png" alt="Moon Blossom">
   <h1 data-i18n="heroTitle"></h1>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="divider">✦</div>
+      <h2 data-i18n="productsTitle"></h2>
+      <p data-i18n="productsSub"></p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="price-filter">
+      <input type="number" id="priceMin" min="0" data-i18n-ph="priceFrom">
+      <span>—</span>
+      <input type="number" id="priceMax" min="0" data-i18n-ph="priceTo">
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="hero-more">
   <p class="sub" data-i18n="heroSub"></p>
   <div class="hero-ctas">
     <a href="#products" class="btn btn-gold" data-i18n="browseBtn"></a>
@@ -439,23 +469,6 @@ footer{position:relative; z-index:1; padding:60px 24px 26px;}
     <div class="divider">✦</div>
     <h2 data-i18n="storyTitle"></h2>
     <p data-i18n="storyText"></p>
-  </div>
-</section>
-
-<section class="products" id="products">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="divider">✦</div>
-      <h2 data-i18n="productsTitle"></h2>
-      <p data-i18n="productsSub"></p>
-    </div>
-    <div class="filters" id="filters"></div>
-    <div class="price-filter">
-      <input type="number" id="priceMin" min="0" data-i18n-ph="priceFrom">
-      <span>—</span>
-      <input type="number" id="priceMax" min="0" data-i18n-ph="priceTo">
-    </div>
-    <div class="grid" id="productGrid"></div>
   </div>
 </section>
 
@@ -1157,6 +1170,31 @@ let priceDebounce;
     priceDebounce = setTimeout(renderProducts, 300);
   });
 });
+
+/* ===================== منتجات من products.json (تحدّثها لوحة التحكم) ===================== */
+function mbLang(v){
+  if(typeof v==='string') v={ar:v};
+  v=v||{};
+  const base=v.ar||v.en||v.fr||'';
+  return {ar:v.ar||base, en:v.en||v.ar||base, fr:v.fr||v.ar||base};
+}
+function mbNormalize(p){
+  return {
+    id:p.id, name:mbLang(p.name), desc:mbLang(p.desc), color:mbLang(p.color),
+    price:Number(p.price)||0, oldPrice:p.oldPrice?Number(p.oldPrice):null,
+    category:p.category||'bags', dimensions:p.dimensions||'',
+    images:Array.isArray(p.images)?p.images.filter(Boolean):(p.image?[p.image]:[]),
+    badge:p.badge||'', stock:(p.stock===0||p.stock)?Number(p.stock):undefined
+  };
+}
+fetch('products.json?v='+Date.now(),{cache:'no-store'})
+  .then(r=>r.ok?r.json():null)
+  .then(data=>{
+    if(!data||!Array.isArray(data.products)) return;
+    const list=data.products.filter(p=>!p.hidden).map(mbNormalize);
+    PRODUCTS.length=0; list.forEach(p=>PRODUCTS.push(p));
+    cart=[]; renderProducts(); renderCart();
+  }).catch(()=>{});
 
 /* ===================== تشغيل أولي ===================== */
 applyI18n();

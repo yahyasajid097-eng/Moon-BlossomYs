@@ -158,25 +158,49 @@ const PRODUCTS = [
 const bagIcon = `<svg viewBox="0 0 64 64" fill="none" stroke="#c9a24d" stroke-width="1.6" style="width:36%;height:36%;opacity:.5;margin:auto;"><path d="M18 24h28l2 30a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4l2-30Z"/><path d="M24 24v-6a8 8 0 0 1 16 0v6"/></svg>`;
 
 const grid = document.getElementById('productGrid');
-PRODUCTS.forEach((p, idx) => {
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.innerHTML = `
-    <div class="card-media">
-      ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ''}
-      ${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy">` : bagIcon}
-    </div>
-    <div class="card-body">
-      <h3>${p.name}</h3>
-      <span class="price">${p.price} DH</span>
-      <span class="color">${p.color}</span>
-      <button class="order-btn" data-idx="${idx}">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="#06210f"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/></svg>
-        اطلبي
-      </button>
-    </div>`;
-  grid.appendChild(card);
-});
+const BADGES = { new:"جديد", sale:"تخفيض", bestseller:"الأكثر مبيعاً" };
+function renderGrid(){
+  grid.innerHTML = '';
+  PRODUCTS.forEach((p, idx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-media">
+        ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ''}
+        ${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy">` : bagIcon}
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <span class="price">${p.price} DH</span>
+        <span class="color">${p.color}</span>
+        <button class="order-btn" data-idx="${idx}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#06210f"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/></svg>
+          اطلبي
+        </button>
+      </div>`;
+    grid.appendChild(card);
+  });
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.onclick = () => openForm(parseInt(btn.dataset.idx));
+  });
+}
+
+/* المنتجات من products.json (تحدّثها لوحة التحكم) */
+fetch('products.json?v=' + Date.now(), { cache:'no-store' })
+  .then(r => r.ok ? r.json() : null)
+  .then(data => {
+    if(!data || !Array.isArray(data.products)) return;
+    const pick = v => (v && typeof v === 'object') ? (v.ar || v.en || v.fr || '') : (v || '');
+    const list = data.products.filter(p => !p.hidden).map(p => ({
+      name: pick(p.name),
+      price: Number(p.price) || 0,
+      color: pick(p.color),
+      image: (Array.isArray(p.images) && p.images[0]) || p.image || '',
+      badge: BADGES[p.badge] || ''
+    }));
+    PRODUCTS.length = 0; list.forEach(p => PRODUCTS.push(p));
+    renderGrid();
+  }).catch(() => {});
 
 /* ===== نموذج الطلب ===== */
 const formOverlay = document.getElementById('formOverlay');
@@ -189,9 +213,7 @@ function openForm(idx){
   formOverlay.classList.add('show');
 }
 function closeForm(){ formOverlay.classList.remove('show'); }
-document.querySelectorAll('.order-btn').forEach(btn => {
-  btn.onclick = () => openForm(parseInt(btn.dataset.idx));
-});
+renderGrid();
 document.getElementById('formCloseBtn').onclick = closeForm;
 formOverlay.addEventListener('click', e => { if(e.target === formOverlay) closeForm(); });
 
