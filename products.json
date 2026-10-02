@@ -1,7 +1,27 @@
 {
   "version": 1,
-  "updated": "2026-10-02T14:57:35.594Z",
+  "updated": "2026-10-02T18:17:16.218Z",
   "products": [
+    {
+      "id": "pmurabe33",
+      "name": {
+        "ar": "حقيبة نمر"
+      },
+      "desc": {
+        "ar": "حقيبة جميلو"
+      },
+      "price": 110,
+      "oldPrice": null,
+      "category": "bags",
+      "dimensions": "",
+      "color": {
+        "ar": ""
+      },
+      "images": [
+        "images/pmurabe33-1-murac843.jpg"
+      ],
+      "badge": "new"
+    },
     {
       "id": "p1",
       "name": {
